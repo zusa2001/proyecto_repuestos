@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Consola de administracion</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:fragment="header">
+            <h1 style="background-color: black;color:white;text-align: center">Consola de administracion</h1>
+            <a th:href="@{/cliente/login}">Home</a>
+            <br>
+            <hr>
+        </header>
+
+        <footer th:fragment="footer">
+            <br>
+            <hr>
+            <p style="background-color: yellow;text-align: center">&COPY; Derechos Reservados 2023</p>
+        </footer>
+        
+    </body>
+</html>
+
+
+
+
+
+
+
