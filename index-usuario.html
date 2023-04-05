@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TechShop</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <h2>Lista de usuarios</h2>
+        <hr>
+        <a th:href="@{/usuario/nuevo}">Nuevo usuario</a>
+        <div th:if="${usuario != null and !usuario.empty}">
+            <table border="0">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo</th>
+                        <th>Teléfono</th>
+                        <th>Contrasena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="cliente: ${clientes}">
+                        <td>[[${usuario.nombre}]]</td>
+                        <td>[[${usuario.apellidos}]]</td>
+                        <td>[[${usuario.correo}]]</td>
+                        <td>[[${usuario.telefono}]]</td>
+                        <td>[[${usuario.contrasena}]]</td>
+                        <td>
+                            <a th:href="@{/usuario/eliminar/} + ${usuario.idusuario}">Eliminar</a>
+                            <a th:href="@{/usuario/modificar/} + ${usuario.idusuario}">Modificar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>       
+        </div>
+        
+        <div th:if="${usuario == null or usuario.empty}">
+            <h2>No tenemos usuario que mostrar</h2>
+        </div>
+        
+        <footer th:replace="layout/plantilla :: footer"/>
+    </body>
+</html>
+
+
+
+
